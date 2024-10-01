@@ -7,30 +7,38 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import com.sesi.tarefa.model.TarefaCategoria;
+import com.sesi.tarefa.model.Usuario;
 import com.sesi.tarefa.repository.TarefaCategoriaRepository;
+import com.sesi.tarefa.repository.UsuarioRepository;
 
 @Configuration
 public class CarregarBaseDeDados {
 	
 	@Autowired
-	TarefaCategoriaRepository tarefaCategoriaRepository;
+	private TarefaCategoriaRepository tarefaCategoriaRepository;
+	
+	@Autowired
+	private UsuarioRepository usuarioRepository;
 	
 	
 	@Bean
 	CommandLineRunner executar() {
 		
 		return args ->{
-			TarefaCategoria categoria = new TarefaCategoria();
-			categoria.setNome("Estudos");
+			Usuario usuario = new Usuario();
+			usuario.setNome("Fernando");
+			usuario.setSenha("madu❤");
 			
-			tarefaCategoriaRepository.save(categoria);
 			
-			TarefaCategoria categoria1 = new TarefaCategoria();
-			categoria1.setNome("Pesquisa");
 			
-			tarefaCategoriaRepository.save(categoria1);
-
+			Usuario usuario1 = new Usuario();
+			usuario.setNome("Giovana");
+			usuario.setSenha("estudarMenina");
 		};
+		
+		
+		
+		
 		
 	}
 }

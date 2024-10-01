@@ -22,8 +22,15 @@
       <td th:text="${categoria.nome}" class="w-75"></td>
       
       <td>
-    	<button type="button" class="btn btn-primary">Primary</button>
-    	<button type="button" class="btn btn-info">Info</button>
+      
+      	<a th:href="@{/editarCategoria/{id} (id=${categoria.id})}">
+    		<button type="button" class="btn btn-primary">Editar</button>
+    	</a>
+    	
+    	<a th:href="@{/excluirCategoria/{id} (id=${categoria.id})}">
+    	<button type="button" class="btn btn-info">Excluir</button>
+    	</a>
+    	
     </td>
       
       
